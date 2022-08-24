@@ -1,0 +1,139 @@
+{
+  "Hostname": "HelloWorld",
+  "IpConfig": {
+    "IpAddress": "192.168.10.197/24",
+    "DefaultGateway": "192.168.10.1",
+    "DNSServer": "192.168.10.1"
+  },
+  "Software": [
+    {
+      "Name": "7zip"
+    },
+    {
+      "Name": "Firefox"
+    },
+    {
+      "Name": "vscode"
+    },
+    {
+      "Name": "notepadplusplus"
+    },
+    {
+      "Name": "adobereader"
+    }
+  ],
+  "RegistryTweaks": [
+    {
+      "Status": "true",
+      "Name": "TaskbarPosition",
+      "Path": "HKLM:\\DEFAULT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StuckRects3",
+      "Subkeyname": "Settings",
+      "Datatype": "Binary",
+      "DataTop": "30000000feffffff7af40000$030000003000000030000000000000000000000036070000300000006000000001000000"
+    },
+    {
+      "Status": "true",
+      "Name": "VerboseLogs",
+      "Path": "HKLM:\\DEFAULT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System",
+      "SubkeyName": "verbosestatus",
+      "Datatype": "DWord",
+      "Data": "1"
+    },
+    {
+      "Status": "true",
+      "Name": "AdvertisingId",
+      "Path": "HKLM:\\DEFAULT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AdvertisingInfo",
+      "SubkeyName": "Enabled",
+      "Datatype": "DWord",
+      "Data": "0"
+    },
+    {
+      "Status": "true",
+      "Name": "DefaultExplorerViewAsMyComputer",
+      "Path": "HKLM:\\DEFAULT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+      "SubkeyName": "LaunchTo",
+      "Datatype": "DWord",
+      "Data": "1"
+    },
+    {
+      "Status": "true",
+      "Name": "Cortana",
+      "Path": "HKLM:\\DEFAULT\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
+      "SubkeyName": "AllowCortana",
+      "Datatype": "DWord",
+      "Data": "0"
+    },
+    {
+      "Status": "true",
+      "Name": "ClassicContextMenu",
+      "Path": "HKLM:\\DEFAULT\\Software\\Classes\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\\InprocServer32"
+    },
+    {
+      "Status": "true",
+      "Name": "HideFileExtensions",
+      "Path": "HKLM:\\DEFAULT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+      "SubkeyName": "HideFileExt",
+      "Datatype": "DWord",
+      "Data": "0"
+    },
+    {
+      "Status": "true",
+      "Name": "ShowHiddenFiles",
+      "Path": "HKLM:\\DEFAULT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+      "SubkeyName": "Hidden",
+      "Datatype": "DWord",
+      "Data": "1"
+    },
+    {
+      "Status": "true",
+      "Name": "Animations",
+      "Path": "HKLM:\\DEFAULT\\Control Panel\\Desktop\\WindowMetrics",
+      "SubkeyName": "MinAnimate",
+      "Datatype": "String",
+      "Data": "1"
+    },
+    {
+      "Status": "true",
+      "Name": "DisableBingSearchInWindowsSearch",
+      "Path": "HKLM:\\DEFAULT\\Software\\Policies\\Microsoft\\Windows\\Explorer",
+      "SubkeyName": "DisableSearchBoxSuggestions",
+      "Datatype": "DWord",
+      "Data": "1"
+    },
+    {
+      "Status": "true",
+      "Name": "MouseAcceleration1",
+      "Path": "HKLM:\\DEFAULT\\Control Panel\\Mouse",
+      "SubkeyName": "MouseSpeed",
+      "Datatype": "String",
+      "Data": "0"
+    },
+    {
+      "Status": "true",
+      "Name": "MouseAcceleration2",
+      "Path": "HKLM:\\DEFAULT\\Control Panel\\Mouse",
+      "SubkeyName": "MouseThreshold1",
+      "Datatype": "String",
+      "Data": "0"
+    },
+    {
+      "Status": "true",
+      "Name": "MouseAcceleration3",
+      "Path": "HKLM:\\DEFAULT\\Control Panel\\Mouse",
+      "SubkeyName": "MouseThreshold2",
+      "Datatype": "String",
+      "Data": "0"
+    }
+  ],
+  "Features": [
+    {
+      "Name": "VirtualMachinePlatform"
+    },
+    {
+      "Name": "Microsoft-Windows-Subsystem-Linux"
+    },
+    {
+      "Name": "TelnetClient"
+    }
+  ]
+}
