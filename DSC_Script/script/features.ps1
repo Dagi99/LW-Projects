@@ -17,8 +17,8 @@ Configuration FeatureConfig {
     Node localhost
     {
         foreach ($Feature in $Config.Features) {
-            WindowsOptionalFeature $Feature.name {
-                Name                 = $Feature.name
+            WindowsOptionalFeature $Feature {
+                Name                 = $Feature
                 NoWindowsUpdateCheck = $false
                 Ensure               = 'Enable'
             }

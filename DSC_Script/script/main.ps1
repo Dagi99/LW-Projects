@@ -64,60 +64,14 @@ Configuration SoftwareConfig {
             InstallDir = "c:\choco"
         }
         foreach ($Software in $Config.Software) {
-            cChocoPackageInstaller $Software.Name {
-                Name      = $Software.Name
+            cChocoPackageInstaller $Software {
+                Name      = $Software
                 Ensure    = 'Present'
                 DependsOn = '[cChocoInstaller]installChoco'
             }
         }
     }
 } SoftwareConfig -OutputPath $DirPath\SoftwareConfig
-
-# Registry configuration
-<# Configuration RegistryConfig {
-
-    # Import requires DscResources
-    Import-DscResource -Module PSDesiredStateConfiguration
-
-    do {
-        # Get the user's desired taskbar position and change the binary settings value accordingly.
-        try {
-            [string]$pos = Read-Host -Prompt "Choose taskbar position:`nTop (1)`nBottom (2)`n"
-            $top = $pos -eq "1" ? $true : $false
-        }
-        catch {
-            Write-Host "Enter either 1 or 2."
-        }
-
-    } while (($pos -ne "1") -and ($pos -ne "2"))
-
-
-    # Top taskbar position
-    $taskbarVal = "30000000feffffff7af40000010000003000000030000000000000000000000036070000300000006000000001000000"
-
-    Node localhost {
-        # Set registry tweaks
-        foreach ($Tweak in $Config.RegistryTweaks) {
-
-            # Classic context menu registry tweak seems to only work with the reg.exe add command.
-            if ($Tweak.Status -eq "true") {
-                if ($Tweak.Name -eq "ClassicContextMenu") {
-                    reg.exe add $Tweak.Path /f /ve
-                }
-                else {
-                    Registry $Tweak.Name {
-                        Key       = $Tweak.Path
-                        Ensure    = "Present"
-                        ValueName = $Tweak.Subkeyname
-                        ValueData = ($Tweak.Name -eq "TaskbarPosition") -and ($top -eq $true) ? $taskbarVal : $Tweak.Data
-                        ValueType = $Tweak.Datatype
-                        Force     = $true
-                    }
-                }
-            }
-        }
-    }
-} RegistryConfig -OutputPath $DirPath\RegistryConfig #>
 
 
 # Activate WinRM
@@ -128,11 +82,6 @@ Start-DscConfiguration -Path "$DirPath\IPConfig" -Force -Verbose -Wait
 Start-Sleep -s 8 #Wait for the Internet Connection
 Start-DscConfiguration -Path "$DirPath\SoftwareConfig" -Force -Verbose -Wait
 Start-DscConfiguration -Path "$DirPath\HostnameConfig" -Force -Verbose -Wait
-
-# Use reg load to ensure registry tweaks are set as default for new user creations (Also works for local registry paths HKCU).
-<# reg load HKLM\DEFAULT c:\users\default\ntuser.dat
-Start-DscConfiguration -Path "$DirPath\RegistryConfig" -Verbose -Force -Wait
-reg unload HKLM\DEFAULT #>
 
 #Endregion
 
