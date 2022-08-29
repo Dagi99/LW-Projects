@@ -1,139 +1,196 @@
 {
   "Hostname": "HelloWorld",
   "IpConfig": {
-    "IpAddress": "192.168.10.197/24",
+    "IpAddress": "192.168.10.193/24",
     "DefaultGateway": "192.168.10.1",
     "DNSServer": "192.168.10.1"
   },
   "Software": [
-    {
-      "Name": "7zip"
-    },
-    {
-      "Name": "Firefox"
-    },
-    {
-      "Name": "vscode"
-    },
-    {
-      "Name": "notepadplusplus"
-    },
-    {
-      "Name": "adobereader"
-    }
+    "7zip",
+    "Firefox",
+    "vscode",
+    "notepadplusplus",
+    "spotify",
+    "adobereader"
   ],
   "RegistryTweaks": [
     {
+      "Name": "LeftTaskbarAlignment",
       "Status": "true",
-      "Name": "TaskbarPosition",
-      "Path": "HKLM:\\DEFAULT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\StuckRects3",
-      "Subkeyname": "Settings",
-      "Datatype": "Binary",
-      "DataTop": "30000000feffffff7af40000$030000003000000030000000000000000000000036070000300000006000000001000000"
+      "Path": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+      "SubkeyName": "TaskbarAl",
+      "Datatype": "REG_DWORD",
+      "Data": "0"
     },
     {
+      "Name": "RemoveChatFromTaskbar",
       "Status": "true",
-      "Name": "VerboseLogs",
-      "Path": "HKLM:\\DEFAULT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System",
+      "Path": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+      "SubkeyName": "TaskbarMn",
+      "Datatype": "REG_DWORD",
+      "Data": "0"
+    },
+    {
+      "Name": "DisableWidgetsInTaskbar",
+      "Status": "true",
+      "Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Dsh",
+      "SubkeyName": "AllowNewsAndInterests",
+      "Datatype": "REG_DWORD",
+      "Data": "0"
+    },
+    {
+      "Name": "EnableFastShutdown",
+      "Status": "true",
+      "Path": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control",
+      "SubkeyName": "WaitToKillServiceTimeout",
+      "Datatype": "REG_SZ",
+      "Data": "1000"
+    },
+    {
+      "Name": "DisableClipboardHistory",
+      "Status": "true",
+      "Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System",
+      "SubkeyName": "AllowClipboardHistory",
+      "Datatype": "REG_DWORD",
+      "Data": "0"
+    },
+    {
+      "Name": "DisableHandwritingSharingInfo",
+      "Status": "true",
+      "Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\TabletPC",
+      "SubkeyName": "PreventHandwritingDataSharing",
+      "Datatype": "REG_DWORD",
+      "Data": "1"
+    },
+    {
+      "Name": "DisableHandwritingErrorReporting",
+      "Status": "true",
+      "Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\HandrwitingErrorReports",
+      "SubkeyName": "PreventHandwritingErrorReports",
+      "Datatype": "REG_DWORD",
+      "Data": "1"
+    },
+    {
+      "Name": "DisableWindowsErrorReporting",
+      "Status": "true",
+      "Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\Windows Error Reporting",
+      "SubkeyName": "Disabled",
+      "Datatype": "REG_DWORD",
+      "Data": "1"
+    },
+    {
+      "Name": "DisallowTelemetryDataCollection",
+      "Status": "true",
+      "Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
+      "SubkeyName": "AllowTelemetry",
+      "Datatype": "REG_DWORD",
+      "Data": "0"
+    },
+    {
+      "Name": "DisableTelemetry2",
+      "Status": "true",
+      "Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\AppCompat",
+      "SubkeyName": "AITEnable",
+      "Datatype": "REG_DWORD",
+      "Data": "0"
+    },
+    {
+      "Name": "EnableVerboseLogs",
+      "Status": "true",
+      "Path": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System",
       "SubkeyName": "verbosestatus",
-      "Datatype": "DWord",
+      "Datatype": "REG_DWORD",
       "Data": "1"
     },
     {
+      "Name": "AddThisPCToDesktop",
       "Status": "true",
-      "Name": "AdvertisingId",
-      "Path": "HKLM:\\DEFAULT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AdvertisingInfo",
+      "Path": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\HideDesktopIcons\\NewStartPanel",
+      "SubkeyName": "{20D04FE0-3AEA-1069-A2D8-08002B30309D}",
+      "Datatype": "REG_DWORD",
+      "Data": "0"
+    },
+    {
+      "Name": "DisableAdvertisingId",
+      "Status": "true",
+      "Path": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AdvertisingInfo",
       "SubkeyName": "Enabled",
-      "Datatype": "DWord",
+      "Datatype": "REG_DWORD",
       "Data": "0"
     },
     {
+      "Name": "DefaultExplorerViewIsMyPC",
       "Status": "true",
-      "Name": "DefaultExplorerViewAsMyComputer",
-      "Path": "HKLM:\\DEFAULT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+      "Path": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
       "SubkeyName": "LaunchTo",
-      "Datatype": "DWord",
+      "Datatype": "REG_DWORD",
       "Data": "1"
     },
     {
+      "Name": "DisableCortana",
       "Status": "true",
-      "Name": "Cortana",
-      "Path": "HKLM:\\DEFAULT\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
+      "Path": "HKEY_CURRENT_USER\\SOFTWARE\\Policies\\Microsoft\\Windows\\Windows Search",
       "SubkeyName": "AllowCortana",
-      "Datatype": "DWord",
+      "Datatype": "REG_DWORD",
       "Data": "0"
     },
     {
-      "Status": "true",
       "Name": "ClassicContextMenu",
-      "Path": "HKLM:\\DEFAULT\\Software\\Classes\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\\InprocServer32"
+      "Status": "true",
+      "Path": "HKEY_CURRENT_USER\\Software\\Classes\\CLSID\\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\\InprocServer32"
     },
     {
+      "Name": "ShowFileExtensions",
       "Status": "true",
-      "Name": "HideFileExtensions",
-      "Path": "HKLM:\\DEFAULT\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+      "Path": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
       "SubkeyName": "HideFileExt",
-      "Datatype": "DWord",
+      "Datatype": "REG_DWORD",
       "Data": "0"
     },
     {
+      "Name": "DisableAnimations",
       "Status": "true",
-      "Name": "ShowHiddenFiles",
-      "Path": "HKLM:\\DEFAULT\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
-      "SubkeyName": "Hidden",
-      "Datatype": "DWord",
-      "Data": "1"
-    },
-    {
-      "Status": "true",
-      "Name": "Animations",
-      "Path": "HKLM:\\DEFAULT\\Control Panel\\Desktop\\WindowMetrics",
+      "Path": "HKEY_CURRENT_USER\\Control Panel\\Desktop\\WindowMetrics",
       "SubkeyName": "MinAnimate",
-      "Datatype": "String",
+      "Datatype": "REG_SZ",
       "Data": "1"
     },
     {
-      "Status": "true",
       "Name": "DisableBingSearchInWindowsSearch",
-      "Path": "HKLM:\\DEFAULT\\Software\\Policies\\Microsoft\\Windows\\Explorer",
+      "Status": "true",
+      "Path": "HKEY_CURRENT_USER\\Software\\Policies\\Microsoft\\Windows\\Explorer",
       "SubkeyName": "DisableSearchBoxSuggestions",
-      "Datatype": "DWord",
+      "Datatype": "REG_DWORD",
       "Data": "1"
     },
     {
+      "Name": "DisableMouseAcceleration1",
       "Status": "true",
-      "Name": "MouseAcceleration1",
-      "Path": "HKLM:\\DEFAULT\\Control Panel\\Mouse",
+      "Path": "HKEY_CURRENT_USER\\Control Panel\\Mouse",
       "SubkeyName": "MouseSpeed",
-      "Datatype": "String",
+      "Datatype": "REG_SZ",
       "Data": "0"
     },
     {
+      "Name": "DisableMouseAcceleration2",
       "Status": "true",
-      "Name": "MouseAcceleration2",
-      "Path": "HKLM:\\DEFAULT\\Control Panel\\Mouse",
+      "Path": "HKEY_CURRENT_USER\\Control Panel\\Mouse",
       "SubkeyName": "MouseThreshold1",
-      "Datatype": "String",
+      "Datatype": "REG_SZ",
       "Data": "0"
     },
     {
+      "Name": "DisableMouseAcceleration3",
       "Status": "true",
-      "Name": "MouseAcceleration3",
-      "Path": "HKLM:\\DEFAULT\\Control Panel\\Mouse",
+      "Path": "HKEY_CURRENT_USER\\Control Panel\\Mouse",
       "SubkeyName": "MouseThreshold2",
-      "Datatype": "String",
+      "Datatype": "REG_SZ",
       "Data": "0"
     }
   ],
   "Features": [
-    {
-      "Name": "VirtualMachinePlatform"
-    },
-    {
-      "Name": "Microsoft-Windows-Subsystem-Linux"
-    },
-    {
-      "Name": "TelnetClient"
-    }
+    "VirtualMachinePlatform",
+    "Microsoft-Windows-Susbystem-Linux",
+    "TelnetClient"
   ]
 }
