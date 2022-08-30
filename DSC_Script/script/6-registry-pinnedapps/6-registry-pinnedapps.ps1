@@ -1,4 +1,4 @@
-Read-Host -Prompt "Press any key to start registry configuration..."
+Read-Host -Prompt "Press Enter key to start registry configuration..."
 
 # Get absolute path of current directory
 $scriptpath = $MyInvocation.MyCommand.Path

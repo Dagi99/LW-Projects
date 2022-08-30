@@ -138,7 +138,7 @@
     "Path": "HKEY_CURRENT_USER\\Control Panel\\Desktop\\WindowMetrics",
     "SubkeyName": "MinAnimate",
     "Datatype": "REG_SZ",
-    "Data": "1"
+    "Data": "0"
   },
   {
     "Name": "DisableBingSearchInWindowsSearch",
