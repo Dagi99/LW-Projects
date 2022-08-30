@@ -1,3 +1,9 @@
+
+# check if windows logon setup is complete, if yes, run whole script
+while ($null -ne (get-process -name "windeploy")) {
+    start-sleep -Seconds 5
+}
+
 # Get absolute path of current directory
 $scriptpath = $MyInvocation.MyCommand.Path
 $dirPath = $MyInvocation.MyCommand.Path | Split-Path
