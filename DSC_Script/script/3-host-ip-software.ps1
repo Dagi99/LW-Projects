@@ -109,7 +109,7 @@ Register-ScheduledTask Script4 -InputObject $task
 $STA = New-ScheduledTaskAction -Execute "C:\Program Files\PowerShell\7\pwsh.exe" -Argument "-File C:\Users\$username\Desktop\6-registry-pinnedapps\6-registry-pinnedapps.ps1"
 $STT = New-ScheduledTaskTrigger -AtLogOn -User "$username"
 $STP = New-ScheduledTaskPrincipal -UserId "$username" -RunLevel "Highest"
-$settings = New-ScheduledTaskSettingsSet -RunOnlyIfIdle -IdleDuration 00:02:00
+$settings = New-ScheduledTaskSettingsSet
 $task = New-ScheduledTask -Action $STA -Trigger $STT -Settings $settings -Principal $STP
 Register-ScheduledTask Script6 -InputObject $task
 
