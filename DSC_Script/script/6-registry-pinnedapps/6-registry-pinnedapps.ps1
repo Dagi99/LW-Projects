@@ -1,5 +1,5 @@
 # Get absolute path of current directory
-$scriptPath = $MyInvocation.MyCommand.Path
+$scriptpath = $MyInvocation.MyCommand.Path
 $dirPath = $MyInvocation.MyCommand.Path | Split-Path
 
 # read json data file
@@ -41,7 +41,8 @@ Unregister-ScheduledTask -TaskName Script6 -Confirm:$false
 
 # Delete all the evidence
 Get-ChildItem $dirPath -Exclude "6-registry-pinnedapps.ps1" | Remove-Item -Force -Recurse -Confirm:$false
-Remove-Item $scriptPath -Recurse -Force -Confirm:$false
+Remove-Item $scriptpath -Recurse -Force -Confirm:$false
+Remove-Item $dirPath -Force -Confirm:$false
 
 # Restart computer at last
 Restart-Computer -Force

@@ -10,12 +10,11 @@
     "Firefox",
     "vscode",
     "notepadplusplus",
-    "spotify",
     "adobereader"
   ],
   "Features": [
     "VirtualMachinePlatform",
-    "Microsoft-Windows-Susbystem-Linux",
+    "Microsoft-Windows-Subsystem-Linux",
     "TelnetClient"
   ]
 }

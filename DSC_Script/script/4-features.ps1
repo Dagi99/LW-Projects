@@ -30,6 +30,7 @@ Configuration FeatureConfig {
 Set-WSManQuickConfig -Force
 
 # Run the MOF file
+Write-Output "Configuring Windows Optional Features..."
 Start-DscConfiguration -Path "$DirPath\FeatureConfig" -Force -Verbose -Wait
 
 # Little pause to make sure the event is really available to read in the Event Viewer
@@ -51,4 +52,12 @@ else {
     $task = New-ScheduledTask -Action $STA -Trigger $STT -Settings $settings -Principal $STP
     Register-ScheduledTask Script5 -InputObject $task
     Start-ScheduledTask -TaskName Script5
+
+    # New scheduled task to execute the registry script for the new user
+    $STA = New-ScheduledTaskAction -Execute "C:\Program Files\PowerShell\7\pwsh.exe" -Argument "-File C:\Users\$username\Desktop\registry\6-registry-pinnedapps.ps1"
+    $STT = New-ScheduledTaskTrigger -AtLogOn -User $hostname\$username
+    $STP = New-ScheduledTaskPrincipal -UserId "$hostname\$username" -RunLevel "Highest"
+    $settings = New-ScheduledTaskSettingsSet
+    $task = New-ScheduledTask -Action $STA -Trigger $STT -Settings $settings -Principal $STP
+    Register-ScheduledTask Script6 -InputObject $task
 }
